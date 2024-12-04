@@ -1,5 +1,4 @@
-﻿
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 using System;
 using System.Diagnostics;
@@ -134,4 +133,3 @@ namespace Cysharp.Threading.Tasks.CompilerServices
 #endif
     }
 }
-

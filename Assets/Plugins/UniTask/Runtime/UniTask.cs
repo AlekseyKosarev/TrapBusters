@@ -478,7 +478,7 @@ namespace Cysharp.Threading.Tasks
         public override string ToString()
         {
             return (this.source == null) ? result?.ToString()
-                 : "(" + this.source.UnsafeGetStatus() + ")";
+                : "(" + this.source.UnsafeGetStatus() + ")";
         }
 
         sealed class IsCanceledSource : IUniTaskSource<(bool, T)>
@@ -708,4 +708,3 @@ namespace Cysharp.Threading.Tasks
         }
     }
 }
-

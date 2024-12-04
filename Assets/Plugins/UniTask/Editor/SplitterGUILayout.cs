@@ -59,4 +59,3 @@ namespace Cysharp.Threading.Tasks.Editor
         }
     }
 }
-

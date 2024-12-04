@@ -72,16 +72,16 @@ namespace Cysharp.Threading.Tasks.Linq
                     switch (state)
                     {
                         case -1: // init
+                        {
+                            writer = new AsyncWriter(this);
+                            RunWriterTask(create(writer, cancellationToken)).Forget();
+                            if (Volatile.Read(ref state) == -2)
                             {
-                                writer = new AsyncWriter(this);
-                                RunWriterTask(create(writer, cancellationToken)).Forget();
-                                if (Volatile.Read(ref state) == -2)
-                                {
-                                    return; // complete synchronously
-                                }
-                                state = 0; // wait YieldAsync, it set TrySetResult(true)
-                                return;
+                                return; // complete synchronously
                             }
+                            state = 0; // wait YieldAsync, it set TrySetResult(true)
+                            return;
+                        }
                         case 0:
                             writer.SignalWriter();
                             return;

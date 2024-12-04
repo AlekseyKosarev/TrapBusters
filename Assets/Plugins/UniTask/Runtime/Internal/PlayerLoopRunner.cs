@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace Cysharp.Threading.Tasks.Internal
@@ -257,4 +256,3 @@ namespace Cysharp.Threading.Tasks.Internal
         }
     }
 }
-

@@ -203,9 +203,9 @@ namespace Cysharp.Threading.Tasks
         {
             ValidateToken(token);
             return (continuation == null || (completedCount == 0)) ? UniTaskStatus.Pending
-                 : (error == null) ? UniTaskStatus.Succeeded
-                 : (error is OperationCanceledException) ? UniTaskStatus.Canceled
-                 : UniTaskStatus.Faulted;
+                : (error == null) ? UniTaskStatus.Succeeded
+                : (error is OperationCanceledException) ? UniTaskStatus.Canceled
+                : UniTaskStatus.Faulted;
         }
 
         /// <summary>Gets the status of the operation without token validation.</summary>
@@ -214,9 +214,9 @@ namespace Cysharp.Threading.Tasks
         public UniTaskStatus UnsafeGetStatus()
         {
             return (continuation == null || (completedCount == 0)) ? UniTaskStatus.Pending
-                 : (error == null) ? UniTaskStatus.Succeeded
-                 : (error is OperationCanceledException) ? UniTaskStatus.Canceled
-                 : UniTaskStatus.Faulted;
+                : (error == null) ? UniTaskStatus.Succeeded
+                : (error is OperationCanceledException) ? UniTaskStatus.Canceled
+                : UniTaskStatus.Faulted;
         }
 
         /// <summary>Gets the result of the operation.</summary>
@@ -940,5 +940,5 @@ namespace Cysharp.Threading.Tasks
             }
             return false;
         }
-   }
+    }
 }

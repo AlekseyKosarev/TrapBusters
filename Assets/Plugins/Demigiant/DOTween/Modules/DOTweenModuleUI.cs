@@ -17,7 +17,7 @@ using Text = UnityEngine.UI.Text;
 #pragma warning disable 1591
 namespace DG.Tweening
 {
-	public static class DOTweenModuleUI
+    public static class DOTweenModuleUI
     {
         #region Shortcuts
 
@@ -128,9 +128,9 @@ namespace DG.Tweening
         public static TweenerCore<Vector2, Vector2, VectorOptions> DOFlexibleSize(this LayoutElement target, Vector2 endValue, float duration, bool snapping = false)
         {
             TweenerCore<Vector2, Vector2, VectorOptions> t = DOTween.To(() => new Vector2(target.flexibleWidth, target.flexibleHeight), x => {
-                    target.flexibleWidth = x.x;
-                    target.flexibleHeight = x.y;
-                }, endValue, duration);
+                target.flexibleWidth = x.x;
+                target.flexibleHeight = x.y;
+            }, endValue, duration);
             t.SetOptions(snapping).SetTarget(target);
             return t;
         }
@@ -434,10 +434,10 @@ namespace DG.Tweening
         public static Tweener DONormalizedPos(this ScrollRect target, Vector2 endValue, float duration, bool snapping = false)
         {
             return DOTween.To(() => new Vector2(target.horizontalNormalizedPosition, target.verticalNormalizedPosition),
-                x => {
-                    target.horizontalNormalizedPosition = x.x;
-                    target.verticalNormalizedPosition = x.y;
-                }, endValue, duration)
+                    x => {
+                        target.horizontalNormalizedPosition = x.x;
+                        target.verticalNormalizedPosition = x.y;
+                    }, endValue, duration)
                 .SetOptions(snapping).SetTarget(target);
         }
         /// <summary>Tweens a ScrollRect's horizontalNormalizedPosition to the given value.
@@ -558,10 +558,10 @@ namespace DG.Tweening
             endValue = endValue - target.color;
             Color to = new Color(0, 0, 0, 0);
             return DOTween.To(() => to, x => {
-                Color diff = x - to;
-                to = x;
-                target.color += diff;
-            }, endValue, duration)
+                    Color diff = x - to;
+                    to = x;
+                    target.color += diff;
+                }, endValue, duration)
                 .Blendable().SetTarget(target);
         }
 
@@ -579,10 +579,10 @@ namespace DG.Tweening
             endValue = endValue - target.color;
             Color to = new Color(0, 0, 0, 0);
             return DOTween.To(() => to, x => {
-                Color diff = x - to;
-                to = x;
-                target.color += diff;
-            }, endValue, duration)
+                    Color diff = x - to;
+                    to = x;
+                    target.color += diff;
+                }, endValue, duration)
                 .Blendable().SetTarget(target);
         }
 
@@ -600,10 +600,10 @@ namespace DG.Tweening
             endValue = endValue - target.color;
             Color to = new Color(0, 0, 0, 0);
             return DOTween.To(() => to, x => {
-                Color diff = x - to;
-                to = x;
-                target.color += diff;
-            }, endValue, duration)
+                    Color diff = x - to;
+                    to = x;
+                    target.color += diff;
+                }, endValue, duration)
                 .Blendable().SetTarget(target);
         }
 
@@ -657,6 +657,6 @@ namespace DG.Tweening
                 return to.anchoredPosition + localPoint - pivotDerivedOffset;
             }
         }
-	}
+    }
 }
 #endif

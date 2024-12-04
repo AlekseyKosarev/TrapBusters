@@ -23,7 +23,7 @@ namespace DG.Tweening
     /// - DOTWEEN_TMP ► TextMesh Pro
     /// - DOTWEEN_TK2D ► 2D Toolkit
     /// </summary>
-	public static class DOTweenModuleUtils
+    public static class DOTweenModuleUtils
     {
         static bool _initialized;
 
@@ -69,7 +69,7 @@ namespace DG.Tweening
         // Fires OnApplicationPause in DOTweenComponent even when Editor is paused (otherwise it's only fired at runtime)
 #if UNITY_4_3 || UNITY_4_4 || UNITY_4_5 || UNITY_4_6 || UNITY_5 || UNITY_2017_1
         static void PlaymodeStateChanged()
-        #else
+#else
         static void PlaymodeStateChanged(UnityEditor.PlayModeStateChange state)
 #endif
         {

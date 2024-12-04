@@ -132,7 +132,7 @@ namespace Cysharp.Threading.Tasks
 #if UNITY_2020_2_OR_NEWER
             | TimeUpdate
 #endif
-            ,
+        ,
 
         /// <summary>
         /// Preset: Minimum pattern, Update | FixedUpdate | LastPostLateUpdate
@@ -286,7 +286,7 @@ namespace Cysharp.Threading.Tasks
         }
 
 #if UNITY_2020_1_OR_NEWER
-		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
 #else
 		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 #endif
@@ -305,7 +305,7 @@ namespace Cysharp.Threading.Tasks
             // When domain reload is disabled, re-initialization is required when entering play mode; 
             // otherwise, pending tasks will leak between play mode sessions.
             var domainReloadDisabled = UnityEditor.EditorSettings.enterPlayModeOptionsEnabled &&
-                UnityEditor.EditorSettings.enterPlayModeOptions.HasFlag(UnityEditor.EnterPlayModeOptions.DisableDomainReload);
+                                       UnityEditor.EditorSettings.enterPlayModeOptions.HasFlag(UnityEditor.EnterPlayModeOptions.DisableDomainReload);
             if (!domainReloadDisabled && runners != null) return;
 #else
             if (runners != null) return; // already initialized
@@ -578,4 +578,3 @@ namespace Cysharp.Threading.Tasks
 
     }
 }
-

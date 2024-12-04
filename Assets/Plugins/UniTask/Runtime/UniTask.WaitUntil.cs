@@ -36,7 +36,7 @@ namespace Cysharp.Threading.Tasks
         }
 
         public static UniTask<U> WaitUntilValueChanged<T, U>(T target, Func<T, U> monitorFunction, PlayerLoopTiming monitorTiming = PlayerLoopTiming.Update, IEqualityComparer<U> equalityComparer = null, CancellationToken cancellationToken = default(CancellationToken), bool cancelImmediately = false)
-          where T : class
+            where T : class
         {
             var unityObject = target as UnityEngine.Object;
             var isUnityObject = target is UnityEngine.Object; // don't use (unityObject == null)
